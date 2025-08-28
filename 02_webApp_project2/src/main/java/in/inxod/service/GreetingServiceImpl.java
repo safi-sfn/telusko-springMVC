@@ -27,4 +27,10 @@ public class GreetingServiceImpl implements IGreetingService {
 		return "Good Night";
 	}
 
+	@Override
+	public String generateBirthdayWish() {
+		
+		return "Happy Birthady";
+	}
+
 }
