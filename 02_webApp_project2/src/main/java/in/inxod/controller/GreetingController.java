@@ -1,5 +1,7 @@
 package in.inxod.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +13,7 @@ import org.springframework.ui.Model;
 import in.inxod.service.IGreetingService;
 
 @Controller
+@RequestMapping("/v1")  // class level mapping
 public class GreetingController {
 
 	@Autowired
@@ -35,5 +38,15 @@ public class GreetingController {
 			model.addAttribute("wish",res);
 		return "greet";
 	}
+	
+	
+	@GetMapping("/greet2")
+	public String generateWish1(Map<String,Object> map) {
+		
+		    String res = service.generateGreeting();
+			map.put("wish", res+" Map");
+		return "greet";
+	}
+	
 	
 }
