@@ -75,8 +75,8 @@
         <h2>Employee Registration</h2>
 
         <!-- The form submits to /employee/save -->
-       <!-- <form action="${pageContext.request.contextPath}/employee/save" method="post"> --> 
-        <form method="post">
+       <form action="${pageContext.request.contextPath}/employee/save" method="post"> 
+     
 
             <label for="eId">Employee ID</label>
             <input type="number" id="eId" name="eId" value="${employee.eId}" required />
